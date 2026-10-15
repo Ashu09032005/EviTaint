@@ -136,3 +136,14 @@ writes `benchmark/calibration.json` with before/after ECE and Brier.
 ## License
 
 MIT (code). Benchmark apps are deliberately vulnerable and for testing only.
+
+<img width="556" height="480" alt="image" src="https://github.com/user-attachments/assets/2b8dcfa7-e963-44e1-8c8a-12e51fbf439e" />
+<img width="947" height="455" alt="image" src="https://github.com/user-attachments/assets/a1209a77-2b17-4c76-bbaf-a3d5c280b29b" />
+<img width="925" height="493" alt="image" src="https://github.com/user-attachments/assets/2e522092-5069-4a1c-9686-77d7ed628d12" />
+<img width="957" height="413" alt="image" src="https://github.com/user-attachments/assets/161681bd-225e-447d-93c0-38d3a636b94a" />
+<img width="931" height="407" alt="image" src="https://github.com/user-attachments/assets/4ddee7f1-b133-4686-bc6d-a60fdcf4f737" />
+
+
+
+
+
