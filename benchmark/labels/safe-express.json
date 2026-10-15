@@ -1,0 +1,14 @@
+{
+  "app": "safe-express",
+  "description": "All routes correctly sanitized. Every candidate is a true negative.",
+  "annotators": ["A1", "A2"],
+  "agreement": { "cohenKappa": 1.0 },
+  "positives": [],
+  "negatives": [
+    { "file": "server.js", "line": 10, "category": "sqli", "note": "parameterized LIKE" },
+    { "file": "server.js", "line": 15, "category": "xss", "note": "escapeHtml applied" },
+    { "file": "server.js", "line": 21, "category": "path", "note": "path.basename containment" },
+    { "file": "server.js", "line": 27, "category": "sqli", "note": "Number() coercion" },
+    { "file": "server.js", "line": 34, "category": "redirect", "note": "allowlist guard" }
+  ]
+}

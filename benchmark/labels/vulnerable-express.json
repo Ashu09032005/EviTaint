@@ -1,0 +1,82 @@
+{
+  "app": "vulnerable-express",
+  "description": "Deliberately vulnerable Express app. Unit of analysis: (file, line, category) at the sink.",
+  "annotators": [
+    "A1",
+    "A2"
+  ],
+  "agreement": {
+    "cohenKappa": 1.0,
+    "note": "synthetic app; both annotators agreed on all sink lines"
+  },
+  "positives": [
+    {
+      "file": "server.js",
+      "line": 15,
+      "category": "sqli",
+      "cwe": "CWE-89",
+      "note": "req.query.term concatenated into LIKE clause"
+    },
+    {
+      "file": "server.js",
+      "line": 22,
+      "category": "cmdi",
+      "cwe": "CWE-78",
+      "note": "req.body.host into cp.exec shell string"
+    },
+    {
+      "file": "server.js",
+      "line": 28,
+      "category": "path",
+      "cwe": "CWE-22",
+      "note": "req.query.file into fs.readFile path"
+    },
+    {
+      "file": "server.js",
+      "line": 33,
+      "category": "xss",
+      "cwe": "CWE-79",
+      "note": "req.query.name reflected via res.send"
+    },
+    {
+      "file": "routes/users.js",
+      "line": 6,
+      "category": "sqli",
+      "cwe": "CWE-89",
+      "note": "req.params.id -> lookupUser -> db.query (interprocedural, cross-file)"
+    },
+    {
+      "file": "config.js",
+      "line": 5,
+      "category": "secret",
+      "cwe": "CWE-798",
+      "note": "synthetic hardcoded secret-like value"
+    }
+  ],
+  "negatives": [
+    {
+      "file": "server.js",
+      "line": 38,
+      "category": "sqli",
+      "note": "parameterized query ? placeholder"
+    },
+    {
+      "file": "server.js",
+      "line": 44,
+      "category": "cmdi",
+      "note": "constant command 'uptime'"
+    },
+    {
+      "file": "routes/users.js",
+      "line": 16,
+      "category": "sqli",
+      "note": "lookupUserSafe coerces with sanitizeId"
+    },
+    {
+      "file": "config.js",
+      "line": 7,
+      "category": "secret",
+      "note": "env var with 'changeme' placeholder fallback"
+    }
+  ]
+}

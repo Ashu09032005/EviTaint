@@ -1,0 +1,35 @@
+{
+  "app": "mixed-ts",
+  "description": "TypeScript template-literal and destructuring cases.",
+  "annotators": [
+    "A1",
+    "A2"
+  ],
+  "agreement": {
+    "cohenKappa": 1.0
+  },
+  "positives": [
+    {
+      "file": "src/app.ts",
+      "line": 11,
+      "category": "xss",
+      "cwe": "CWE-79",
+      "note": "template literal interpolation into res.send"
+    },
+    {
+      "file": "src/app.ts",
+      "line": 17,
+      "category": "cmdi",
+      "cwe": "CWE-78",
+      "note": "destructured filename into exec template"
+    }
+  ],
+  "negatives": [
+    {
+      "file": "src/app.ts",
+      "line": 23,
+      "category": "xss",
+      "note": "reassigned to constant 'ok' before res.send"
+    }
+  ]
+}
